@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>🎮 Tic Tac Toe</h1>
+
+<div class="game-container">
+
+    <div class="grid">
+        {% for i in range(9) %}
+            <a href="/move/{{i}}" class="cell">
+                {{ board[i] }}
+            </a>
+        {% endfor %}
+    </div>
+
+    <div class="status">
+        {% if winner %}
+            {% if winner == "Draw" %}
+                🤝 It's a Draw!
+            {% else %}
+                🎉 Player {{ winner }} Wins!
+            {% endif %}
+        {% else %}
+            👉 Player {{ player }}'s Turn
+        {% endif %}
+    </div>
+
+    <a href="/reset" class="button">🔄 Restart Game</a>
+
+</div>
+
+</body>
+</html>
