@@ -1,2 +1,3 @@
-# Todo-list
-✨ What You Built  ✔ Add tasks ✔ Delete tasks ✔ Mark as complete ✔ Save using localStorage ✔ Add deadline (bonus)
+Day-1 todo app
+Day-2 tic-tac-toe
+Day-3 Password Generator
