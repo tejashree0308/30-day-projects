@@ -1,0 +1,35 @@
+bbody {
+  text-align: center;
+  font-family: Comic Sans MS;
+  background-color: #ffe6f2;
+}
+
+h1 {
+  color: #ff66b2;
+}
+
+#gameArea {
+  width: 600px;
+  height: 400px;
+  border: 3px dashed pink;
+  margin: auto;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+}
+
+#kitty {
+  width: 80px;
+  position: absolute;
+  cursor: pointer;
+}
+
+#playAgain {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: pink;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
