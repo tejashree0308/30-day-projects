@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flashcards App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Flashcards App 📚</h1>
+
+        <div class="card" onclick="flipCard()">
+            <p id="card-text">Click to Start</p>
+        </div>
+
+        <button onclick="prevCard()">⬅ Prev</button>
+        <button onclick="nextCard()">Next ➡</button>
+
+        <h3>Add New Card</h3>
+        <input type="text" id="question" placeholder="Enter Question">
+        <input type="text" id="answer" placeholder="Enter Answer">
+        <button onclick="addCard()">Add Card</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
