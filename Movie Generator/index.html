@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Movie Generator</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    margin: 20px;
+    border: none;
+    background: #ff4b2b;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff416c;
+}
+
+#movieBox {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+img {
+    width: 220px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎬 Movie Generator</h1>
+
+<button onclick="generateMovie()">🎲 Generate Movie</button>
+
+<div id="movieBox">
+    <h2 id="title">Click the button</h2>
+    <img id="poster" src="" alt="">
+    <p id="genre"></p>
+</div>
+
+<script>
+const movies = [
+    {
+        title: "Inception",
+        genre: "Sci-Fi",
+        poster: "https://via.placeholder.com/220x300?text=Inception"
+    },
+    {
+        title: "Avengers",
+        genre: "Action",
+        poster: "https://via.placeholder.com/220x300?text=Avengers"
+    },
+    {
+        title: "Titanic",
+        genre: "Romance",
+        poster: "https://via.placeholder.com/220x300?text=Titanic"
+    },
+    {
+        title: "Joker",
+        genre: "Drama",
+        poster: "https://via.placeholder.com/220x300?text=Joker"
+    },
+    {
+        title: "Interstellar",
+        genre: "Sci-Fi",
+        poster: "https://via.placeholder.com/220x300?text=Interstellar"
+    }
+];
+
+function generateMovie() {
+    const randomIndex = Math.floor(Math.random() * movies.length);
+    const movie = movies[randomIndex];
+
+    document.getElementById("title").textContent = movie.title;
+    document.getElementById("genre").textContent = "Genre: " + movie.genre;
+    document.getElementById("poster").src = movie.poster;
+}
+</script>
+
+</body>
+</html>
