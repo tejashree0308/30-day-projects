@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Typing Speed Test</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+#quote {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>⌨️ Typing Speed Test</h1>
+
+    <div id="quote">Click start to begin...</div>
+
+    <textarea id="input" placeholder="Start typing here..." disabled></textarea>
+
+    <br>
+    <button onclick="startTest()">Start Test</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+const quotes = [
+    "Practice makes perfect in programming.",
+    "JavaScript is fun to learn.",
+    "Typing speed improves with consistency.",
+    "Code daily to become a better developer.",
+    "Focus on accuracy before speed."
+];
+
+let timer = 60;
+let interval;
+let currentQuote = "";
+
+function startTest() {
+    currentQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById("quote").textContent = currentQuote;
+
+    document.getElementById("input").value = "";
+    document.getElementById("input").disabled = false;
+    document.getElementById("input").focus();
+
+    timer = 60;
+    document.getElementById("result").textContent = "Time: 60s";
+
+    clearInterval(interval);
+    interval = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    timer--;
+    document.getElementById("result").textContent = "Time: " + timer + "s";
+
+    if (timer === 0) {
+        clearInterval(interval);
+        finishTest();
+    }
+}
+
+function finishTest() {
+    const typed = document.getElementById("input").value.trim();
+    const wordsTyped = typed.split(" ").length;
+
+    const wpm = wordsTyped;
+
+    let correctChars = 0;
+    for (let i = 0; i < typed.length; i++) {
+        if (typed[i] === currentQuote[i]) {
+            correctChars++;
+        }
+    }
+
+    const accuracy = ((correctChars / currentQuote.length) * 100).toFixed(2);
+
+    document.getElementById("result").innerHTML =
+        `WPM: ${wpm} | Accuracy: ${accuracy}%`;
+
+    document.getElementById("input").disabled = true;
+}
+</script>
+
+</body>
+</html>
