@@ -1,0 +1,32 @@
+body {
+    background: #111;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+#colorBox {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background: white;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    background: #00adb5;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #008c94;
+}
